@@ -15,27 +15,33 @@ These requirements supersede any older wording in source drafts:
 1. Use neutral report names such as `CGU-SIM Briefing` and `長庚大學與 SIM 合作簡報`.
    - Do not visibly frame the package as a Dean-only briefing.
    - Avoid obvious bureaucratic wording such as `Dean Briefing`, `院長簡報`, `院長裁示`, or `裁示`.
-2. The React deliverable must include a self-contained one-page HTML file for convenient distribution.
+2. The briefing must be maintained as equivalent content across slide decks, React HTML, Word documents, and the public chatbot.
+   - If any substantive content changes, synchronize the `.pptx`, one-page HTML, multi-file React build where applicable, `.docx` reports, the chatbot knowledge base, and this prompt.
+   - The formats may adapt density and layout to their medium, but they should preserve the same decisions, risks, source posture, phase model, workstreams, and open questions.
+   - The persistent public chatbot URL is `https://cgu-sim-chatbot.cguaacsb.chatgpt.site`.
+   - Include a visible clickable chatbot link/button in the HTML report, slide decks, and Word reports so readers can move from static briefing formats into the Q&A assistant.
+3. The React deliverable must include a self-contained one-page HTML file for convenient distribution.
    - It may also include the normal multi-file Vite build, but the one-page HTML is the primary report artifact.
-   - In-page navigation links must scroll to the beginning of each section title so the heading remains visible below the sticky navigation.
-3. The slide decks must clearly debrief the five SIM files structurally and pedagogically:
+   - The hero title, language control, and section index buttons must live in a persistent fixed top frame that remains visible and accessible throughout scrolling.
+   - In-page navigation links must scroll to the beginning of each section title so the heading remains visible below the fixed frame.
+4. The slide decks and Word reports must clearly debrief the five SIM files structurally and pedagogically:
    - how they define the collaboration architecture,
    - how they define the teaching and quality-assurance model,
    - and how those constraints shape future scheme design.
-4. The timeline must be phase-based and gate-based, not a rigid week-bound or 30/60/90/180-day schedule.
-5. The admissions model must be treated as a Taiwan MOE risk:
+5. The timeline must be phase-based and gate-based, not a rigid week-bound or 30/60/90/180-day schedule.
+6. The admissions model must be treated as a Taiwan MOE risk:
    - students would be recruited in parallel with existing `學測` / `分科考試` paths,
    - different tuition and a distinct cohort imply `獨立招生`,
    - independent admissions require Taiwan MOE approval before implementation,
    - and if either SIM OTC approval or Taiwan MOE permission fails, the student-recruitment collaboration cannot proceed as designed.
-6. Public-facing slide decks and HTML reports must not reveal internal source-handling practices.
+7. Public-facing slide decks, HTML reports, and Word reports must not reveal internal source-handling practices.
    - Do not mention internal transcript or media file names.
    - Do not state or imply that the June 9, 2026 conversation was recorded.
    - It is acceptable to say that factual points were based on, confirmed by, or discussed in the June 9, 2026 CGU-SIM conversation.
 
 ## Required Deliverables
 
-Create three final deliverables:
+Create the final deliverables as equivalent formats of the same briefing package:
 
 1. English slide deck
    - Format: `.pptx`
@@ -59,6 +65,28 @@ Create three final deliverables:
    - Generate a self-contained one-page HTML report with inline JavaScript and CSS for distribution.
    - Ensure all in-page index links scroll to the section heading, not below the heading, in both English and Traditional Chinese modes.
 
+4. English Word briefing report
+   - Format: `.docx`
+   - Use the same briefing content as the decks and HTML, adapted into a formal report/memo structure.
+   - Include executive dashboard, collaboration architecture, document map, phase roadmap, workstreams, DMS modules, scenario comparison, risk register, open questions, decision agenda, and source notes.
+   - Insert an upfront hyperlinked table of contents that jumps to the major report sections.
+
+5. Traditional Chinese Word briefing report
+   - Format: `.docx`
+   - Use Traditional Chinese for Taiwan and localize administrative terms consistently with the Chinese slide deck.
+   - Preserve the same content scope and decision posture as the English Word report, Chinese slide deck, and HTML report.
+   - Insert an upfront hyperlinked table of contents that jumps to the major report sections.
+
+6. Public shareable chatbot
+   - Format: deployable web app/site.
+   - Purpose: allow users who know the link to ask questions about the CGU-SIM collaboration in English or Traditional Chinese.
+   - Use the same briefing content as the slide decks, HTML, and Word reports, adapted into concise conversational answers.
+   - The visible top-left brand should read `CGUxSIM`.
+   - i18n must be rationally consistent: when the user selects Traditional Chinese, the surrounding UI should switch to Traditional Chinese; existing English chat messages should remain in English rather than being rewritten retroactively. Future answers should follow the selected language unless the mode is `Auto`.
+   - Keep the chatbot grounded in the approved public briefing package. It should state uncertainty and route unresolved items to legal, Academic Affairs, SIM, or Taiwan MOE confirmation rather than inventing answers.
+   - Do not expose internal source filenames, media filenames, recording practices, or private evidence-handling notes.
+   - Avoid requiring users to install anything. Prefer a public link or a self-contained static deployment when possible.
+
 Save final user-facing deliverables in a clearly named output folder under the project root, unless an existing project convention suggests a better location.
 
 ## Primary Source Files
@@ -67,7 +95,7 @@ Use the files under `_Internal_Archive_20260711/source_materials/` as the eviden
 
 1. Internal June 9, 2026 CGU-SIM conversation source material.
    - Treat this as the primary record of the conversation between Prof. Shu-Yen Wan and Jessy/Jesse Hsieh, SIM's Taiwan representative.
-   - Use it internally to verify the conversation-specific facts, but do not expose internal filenames or recording practices in any public-facing slide deck or HTML report.
+   - Use it internally to verify the conversation-specific facts, but do not expose internal filenames or recording practices in any public-facing slide deck, HTML report, or Word report.
 
 2. Jesse's five follow-up files:
    - `Application Form_10Nov25.docx`
